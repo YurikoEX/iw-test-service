@@ -22,9 +22,6 @@ var RemoteWorker = (function () {
             if (!_.isUndefined(cb)) {
                 cb();
             }
-            setInterval(function () {
-                service.comm.inform('update', { "time": (new Date).getTime(), "data": Math.floor(Math.random() * 100000) });
-            }, 1000);
         };
         return this.worker;
     }

@@ -14,6 +14,9 @@ var RemoteService = (function () {
             use(w);
         })
             .inject(function (service, use) {
+            use(new ironworks.plugins.http(service.comm, service.who()));
+        })
+            .inject(function (service, use) {
             use(new ironworks.plugins.socket(service.comm, service.who()));
         })
             .info('error', function (e) {
